@@ -29,6 +29,14 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
 }
 
+h1.title {
+    font-family: 'Volkhov', sans-serif;
+    font-size: 90px;
+    letter-spacing: -3px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid;
+}
+
 .avatar {
     width: 254px;
     height: auto;
