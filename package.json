@@ -1,0 +1,29 @@
+{
+  "name": "it353-matheussampaio",
+  "version": "1.0.0",
+  "description": "IT353 Assignments and Labs",
+  "scripts": {
+    "test": "mocha **/*.spec.js",
+    "test:debug": "mocha **/*.spec.js --watch **/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matheussampaio/it353.git"
+  },
+  "keywords": [
+    "html",
+    "javascript",
+    "web"
+  ],
+  "author": "Matheus Sampaio <matheus@sampaio.us>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matheussampaio/it353/issues"
+  },
+  "homepage": "https://github.com/matheussampaio/it353#readme",
+  "devDependencies": {
+    "chai": "3.5.0",
+    "eslint-config-airbnb": "4.0.0",
+    "mocha": "2.4.5"
+  }
+}

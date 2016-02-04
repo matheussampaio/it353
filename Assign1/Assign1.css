@@ -1,0 +1,14 @@
+body {
+    background-image: url('background.jpg');
+    background-size: contain;
+}
+
+.table th {
+    color: yellow;
+    size: 14pt;
+    background-color: blue;
+}
+
+.secret {
+    display: block;
+}
