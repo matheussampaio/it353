@@ -1,5 +1,5 @@
-function givenNscores() {
 
+function givenNscores() {
   var numberOfScores = parseInt(prompt('Enter the # of scores:'));
   var scores = [];
 
@@ -10,9 +10,9 @@ function givenNscores() {
   }
 
   // Calculate min, max and sum
-  var min = Number.MAX_VALUE,
-    max = Number.MIN_VALUE,
-    sum = 0;
+  var min = Number.MAX_VALUE;
+  var max = Number.MIN_VALUE;
+  var sum = 0;
 
   scores.forEach(function(score) {
     if (score < min) {
@@ -69,6 +69,12 @@ function totalPayEmployee() {
     'Rate of pay: ' + rate,
     'Total pay: $' + total
   ].join('\n'));
+}
+
+function saveInput() {
+  var text = document.getElementById('input-save').value;
+  localStorage.saved = text;
+  document.getElementById('output-saved').innerHTML = text;
 }
 
 function validateForm(form) {
