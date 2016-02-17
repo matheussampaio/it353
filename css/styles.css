@@ -151,3 +151,11 @@ table, th, td {
 .screenshots > p {
   margin-bottom: 0px;
 }
+
+input[type=checkbox], input[type=radio] {
+  margin-top: 8px !important;
+}
+
+iframe {
+  background: white;
+}

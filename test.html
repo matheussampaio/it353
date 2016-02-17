@@ -1,0 +1,32 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Test</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js" charset="utf-8"></script>
+
+<style media="screen">
+.hidden {
+  display: none;
+}
+</style>
+</head>
+<body>
+  <select>
+    <option value="#">Choose a dept</option>
+    <option value="depA.html">Dep A</option>
+    <option value="depB.html">Dep B</option>
+    <option value="depC.html">Dep C</option>
+  </select>
+
+  <script>
+  $('select').change(function() {
+    var destination = $('select option:selected').val();
+
+    if (destination !== '#') {
+      document.location = destination;
+    }
+  });
+  </script>
+</body>
+</html>
