@@ -3,3 +3,5 @@
 node_modules/
 /NetBeansApps/ProfileMatchAppJSF2.x/nbproject/private/
 /NetBeansApps/ProfileMatchAppJSF2.x/build/
+
+*.class

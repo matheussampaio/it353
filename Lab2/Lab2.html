@@ -121,6 +121,89 @@
 
     <hr>
 
+    <h2>Question 7:</h2>
+
+    <div>
+      <iframe style="width: 100%; height: 300px" src="http://embed.plnkr.co/xQgM0keW0GkOwTFpPuEU" frameborder="1" allowfullscren="allowfullscren"></iframe>
+    </div>
+
+    <div class="screenshots text-center">
+      <p>NO Filled Answers - Part 1:</p>
+      <img src="./screenshots/question-7-1-1.png">
+
+      <p>NO Filled Answers - Part 2:</p>
+      <img src="./screenshots/question-7-1-2.png">
+
+      <p>Correctly Filled Answers - Part 1:</p>
+      <img src="./screenshots/question-7-2-1.png">
+
+      <p>Correctly Filled Answers - Part 2:</p>
+      <img src="./screenshots/question-7-2-2.png">
+
+      <p>Mix of Correct and Incorrect - Part 1:</p>
+      <img src="./screenshots/question-7-3-1.png">
+
+      <p>Mix of Correct and Incorrect - Part 2:</p>
+      <img src="./screenshots/question-7-3-2.png">
+    </div>
+
+    <hr>
+
+    <h2>Question 8:</h2>
+
+<pre><code class="java">package edu.iltu.itk353.lab2.msanto2;
+
+public class CheckValidator {
+
+    public static boolean isCounterfeit(String string) {
+        if (string.length() != 10) {
+            return true;
+        }
+
+        if (hasAlphaChar(string)) {
+            return true;
+        }
+
+        if (threeOrMoreZerosInSuccession(string)) {
+            return true;
+        }
+
+        if (fourOrMoreNonZerosInSuccession(string)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    private static boolean hasAlphaChar(String string) {
+        return string.matches(".*[a-zA-Z].*");
+    }
+
+    private static boolean threeOrMoreZerosInSuccession(String string) {
+        return string.matches(".*(0{3,}).*");
+    }
+
+    private static boolean fourOrMoreNonZerosInSuccession(String string) {
+        return string.matches(".*([1-9]{4,}).*");
+    }
+
+}</code></pre>
+
+    <div class="screenshots text-center">
+      <p>A run of the JUnit test class against mine CheckValidator class, showing the result of the run:</p>
+      <img src="./screenshots/question-8.png">
+    </div>
+
+    <hr>
+
+    <h2>Question 9:</h2>
+
+    <div>
+      <iframe style="width: 100%; height: 300px" src="http://embed.plnkr.co/WbVvFKHTFeVX7AuDNhmb" frameborder="1" allowfullscren="allowfullscren"></iframe>
+    </div>
+
+    <hr>
+
     <footer class="site-footer">
 
       <div class="wrapper">
