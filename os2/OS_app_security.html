@@ -10,7 +10,7 @@
   <meta name="author" content="Matheus Sampaio">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-  <title>IT 353 - Lab 2</title>
+  <title>IT 353 - Online Session</title>
 
   <!-- Bootstrap 3.3.6 CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -39,6 +39,8 @@
   <!-- Styles -->
   <link href="../css/styles.css" rel="stylesheet">
 
+
+
 </head>
 
 <body>
@@ -58,10 +60,10 @@
         <ul class="nav navbar-nav">
           <li><a href="../index.html">Home</a></li>
           <li><a href="../Lab1/Lab1.html">Lab 1</a></li>
-          <li class="active"><a href="#">Lab 2</a></li>
+          <li><a href="../Lab2/Lab2.html">Lab 2</a></li>
           <li><a href="../Assign1/Assign1.html">Assign 1</a></li>
           <li><a href="../os/OS.html">OS1 - JavaScript & Java</a></li>
-          <li><a href="../os2/OS_app_security.html">OS2 - Web App Security</a></li>
+          <li><a href="#">OS2 - Web App Security</a></li>
         </ul>
       </div>
       <!-- /.nav-collapse -->
@@ -72,135 +74,27 @@
 
   <div class="container wrapper">
 
-    <h1 class="title text-center">Lab 2</h1>
-
-    <h2>Question 1:</h2>
+    <h1 class="title text-center">OS 2 - Web App Security</h1>
 
     <div>
-      <iframe style="width: 100%; height: 300px" src="http://embed.plnkr.co/do1twvYtqR4439PHdqPy" frameborder="1" allowfullscren="allowfullscren"></iframe>
-    </div>
+      <h2 id="part-a" class="text-center">Part A: SQL Injection</h2>
 
-    <hr>
+      <div class="screenshots text-center">
+        <p>Login Accepted with SQL Injection:</p>
+        <img src="./screenshots/login_accepted.png">
 
-    <h2>Question 2:</h2>
+        <p>SQL Injection rejected after some alterations:</p>
+        <img src="./screenshots/login_rejected.png">
+      </div>
 
-    <div>
-      <iframe style="width: 100%; height: 300px" src="http://embed.plnkr.co/iIrW2ozCnfhsMJhJeeDe" frameborder="1" allowfullscren="allowfullscren"></iframe>
-    </div>
+      <h2 id="part-a" class="text-center">Part B: Cross-Site Scripting (XSS)</h2>
 
-    <hr>
+      <div class="screenshots text-center">
+        <p>XSS inside the comment:</p>
+        <img src="./screenshots/xss.png">
+      </div>
 
-    <h2>Question 3:</h2>
 
-    <div>
-      <iframe style="width: 100%; height: 300px" src="http://embed.plnkr.co/JrEinYrzvsVzjiPr1mjt" frameborder="1" allowfullscren="allowfullscren"></iframe>
-    </div>
-
-    <hr>
-
-    <h2>Question 4:</h2>
-
-    <div>
-      <iframe style="width: 100%; height: 300px" src="http://embed.plnkr.co/y2kimNWHNQozwruVy3VP" frameborder="1" allowfullscren="allowfullscren"></iframe>
-    </div>
-
-    <hr>
-
-    <h2>Question 5:</h2>
-
-    <div>
-      <iframe style="width: 100%; height: 300px" src="http://embed.plnkr.co/frwcjUtAZSOpyZTkmHwK" frameborder="1" allowfullscren="allowfullscren"></iframe>
-    </div>
-
-    <hr>
-
-    <h2>Question 6:</h2>
-
-    <div>
-      <iframe style="width: 100%; height: 300px" src="http://embed.plnkr.co/zXNPfsND5tMzvX8x22tQ" frameborder="1" allowfullscren="allowfullscren"></iframe>
-    </div>
-
-    <hr>
-
-    <h2>Question 7:</h2>
-
-    <div>
-      <iframe style="width: 100%; height: 300px" src="http://embed.plnkr.co/xQgM0keW0GkOwTFpPuEU" frameborder="1" allowfullscren="allowfullscren"></iframe>
-    </div>
-
-    <div class="screenshots text-center">
-      <p>NO Filled Answers - Part 1:</p>
-      <img src="./screenshots/question-7-1-1.png">
-
-      <p>NO Filled Answers - Part 2:</p>
-      <img src="./screenshots/question-7-1-2.png">
-
-      <p>Correctly Filled Answers - Part 1:</p>
-      <img src="./screenshots/question-7-2-1.png">
-
-      <p>Correctly Filled Answers - Part 2:</p>
-      <img src="./screenshots/question-7-2-2.png">
-
-      <p>Mix of Correct and Incorrect - Part 1:</p>
-      <img src="./screenshots/question-7-3-1.png">
-
-      <p>Mix of Correct and Incorrect - Part 2:</p>
-      <img src="./screenshots/question-7-3-2.png">
-    </div>
-
-    <hr>
-
-    <h2>Question 8:</h2>
-
-<pre><code class="java">package edu.iltu.itk353.lab2.msanto2;
-
-public class CheckValidator {
-
-    public static boolean isCounterfeit(String string) {
-        if (string.length() != 10) {
-            return true;
-        }
-
-        if (hasAlphaChar(string)) {
-            return true;
-        }
-
-        if (threeOrMoreZerosInSuccession(string)) {
-            return true;
-        }
-
-        if (fourOrMoreNonZerosInSuccession(string)) {
-            return true;
-        }
-
-        return false;
-    }
-
-    private static boolean hasAlphaChar(String string) {
-        return string.matches(".*[a-zA-Z].*");
-    }
-
-    private static boolean threeOrMoreZerosInSuccession(String string) {
-        return string.matches(".*(0{3,}).*");
-    }
-
-    private static boolean fourOrMoreNonZerosInSuccession(String string) {
-        return string.matches(".*([1-9]{4,}).*");
-    }
-
-}</code></pre>
-
-    <div class="screenshots text-center">
-      <p>A run of the JUnit test class against mine CheckValidator class, showing the result of the run:</p>
-      <img src="./screenshots/question-8.png">
-    </div>
-
-    <hr>
-
-    <h2>Question 9:</h2>
-
-    <div>
-      <iframe style="width: 100%; height: 300px" src="http://embed.plnkr.co/WbVvFKHTFeVX7AuDNhmb" frameborder="1" allowfullscren="allowfullscren"></iframe>
     </div>
 
     <hr>
@@ -233,6 +127,9 @@ public class CheckValidator {
 
   <!-- Bootstrap core JavaScript
     ================================================== -->
+  <!-- Online Session Javascript -->
+  <script type="text/javascript" src="./os.js"></script>
+
   <!-- Placed at the end of the document so the pages load faster -->
   <!-- Add anchors to Headers -->
   <script>

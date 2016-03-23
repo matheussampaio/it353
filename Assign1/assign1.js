@@ -88,7 +88,7 @@ function isDigit(num) {
 
   var string = "1234567890";
 
-  if (string.indexOf(num) != -1) {
+  if (string.indexOf(num) !== -1) {
     return true;
   }
 
