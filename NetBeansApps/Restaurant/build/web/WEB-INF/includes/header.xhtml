@@ -1,0 +1,77 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      >
+    <div id ="banner" style ="width: 1000px;height: 50px;">
+
+        <div style="font-size: 40px;width:750px;float:left; text-align: left; ">Redbird Country Kitchen</div>
+        <div style="width:250px;float:left; padding-top: 15px;">
+            <c:if test="${LoginBean.login=='true'}">
+
+                <h:panelGroup layout="block">
+                    <h:form>
+                        <h:commandLink action="account" value="#{LoginBean.fullName}" /> |
+                        <h:commandLink action="#{LoginBean.logout()}" value="Logout" />
+                    </h:form>
+                </h:panelGroup>
+
+            </c:if>
+            <c:if test="${LoginBean.login=='false'}">
+
+                <h:panelGroup layout="block">
+                    <h:form>
+                        <h:commandLink action="signup" value="Sign Up" /> |
+                        <h:commandLink action="login" value="Login" />
+                    </h:form>
+                </h:panelGroup>
+
+            </c:if>
+        </div>
+    </div>
+    <div id="navigation" class ="navigation">
+        <center>
+            <ul id="menu">
+                <h:panelGrid columns="8" width="700px">
+                    <h:panelGroup layout="block">
+                        <h:form>
+                            <li ><h:commandLink action="index" value="Home" /></li>
+                        </h:form>
+                    </h:panelGroup>
+                       <h:panelGroup layout="block">
+                        <h:form>
+                            <li ><h:commandLink action="locations"
+                                           onmouseover="mopen('m2')"
+                                           onmouseout="mclosetime()"
+                                           value="Locations" />
+                            <div id="m2" style ="visibility: hidden;"
+                                 onmouseover="mcancelclosetime()"
+                                 onmouseout="mclosetime()">
+                                <h:commandLink action="normal" value="Bloomington/Normal" />
+                                <h:commandLink action="champaign" value="Champaign" />
+                                <h:commandLink action="chicago" value="Chicago" />
+                                <h:commandLink action="peoria" value="Peoria" />
+                                <h:commandLink action="stlouis" value="St. Louis" />
+                            </div></li>
+                        </h:form>
+                    </h:panelGroup>
+                    <h:panelGroup layout="block">
+                        <h:form>
+                            <li><h:commandLink action="menu" value="Menu" /></li>
+                        </h:form>
+                    </h:panelGroup>
+                    
+                    <h:panelGroup layout="block">
+                        <h:form>
+                            <li><h:commandLink action="review" value="Reviews" /></li>
+                        </h:form>
+                    </h:panelGroup>
+                </h:panelGrid>
+            </ul>
+
+
+        </center>
+
+    </div>
+
+</html>

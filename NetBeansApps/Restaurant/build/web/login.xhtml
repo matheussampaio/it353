@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <head>
+        <title>Should Be Ignored</title>
+    </head>
+    <body>
+
+    <ui:composition	template="./WEB-INF/includes/template.xhtml">
+
+        <!-- "htmlHead" part of the template will be replaced by the HTML fragment defined here -->
+        <ui:define name="htmlHead">
+            <meta name="description" content="Our Company Home Page" />
+            <title>Redbird Country - Menu</title>
+        </ui:define>
+
+        <!-- "main" part of the template will be replaced by the HTML fragment defined here -->
+        <ui:define name="main">
+            <div id="login" style ="width:600px; height:400px; margin-top: 50px; border: 1px solid #000; background-color: #EAEBD8">
+                <div style="width:255px; height:370; border-right: 2px solid #888888; margin-top: 15px;margin-left: 15px;padding-left: 25px; float:left">
+                    <center><h3>Sign in here</h3></center>
+                    <h:panelGroup layout="block">
+                    <h:form>
+                    Username: <br/><h:inputText id="username" value="#{LoginBean.username}"/><br /><br/>
+                    Password: <br/><h:inputSecret id="password" value="#{LoginBean.password}" /><br /><br/>
+                    <h:outputText value="#{LoginBean.errorResponse()}" style="color:#ff0000"/><br/>
+                    <h:commandButton value="Sign in" style="background-color: #DD0000; color: #FFFFFF;" id="loginbutton" action="#{LoginBean.login()}" />
+                    </h:form>
+                    </h:panelGroup>
+                </div>
+                <div style="width:270px; height:370; margin-top: 15px; padding-left: 15; float:left">
+                    <center><h3>Don't have an account?</h3> </center>
+                    Sign up to recieve coupons and news letters.
+                    <br/><br/>Login to review menu items and re-order previous orders.
+                    <br/><br/>
+                    <h4>Sign up now!</h4>
+                    <h:panelGroup layout="block">
+                    <h:form>
+                    <h:commandButton action="signup.xhtml" style="background-color: #DD0000; color: #FFFFFF;" value="Sign up"/>
+                    </h:form>
+                    </h:panelGroup>
+
+                </div>
+            </div>
+        </ui:define>
+
+    </ui:composition>
+</body>
+</html>
+

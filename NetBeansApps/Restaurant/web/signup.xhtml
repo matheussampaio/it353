@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <head>
+        <title>Should Be Ignored</title>
+    </head>
+    <body>
+
+    <ui:composition	template="./WEB-INF/includes/template.xhtml">
+
+        <!-- "htmlHead" part of the template will be replaced by the HTML fragment defined here -->
+        <ui:define name="htmlHead">
+            <meta name="description" content="Our Company Home Page" />
+            <title>Redbird Country - Menu</title>
+            <script type="text/javascript" charset="utf-8" src="./resources/jquery-1.4.1.min.js"></script>
+            <script type="text/javascript" charset="utf-8" src="./resources/jquery.datePicker.js"></script>
+            <script type="text/javascript">
+ 
+
+            </script>
+        </ui:define>
+
+        <!-- "main" part of the template will be replaced by the HTML fragment defined here -->
+        <ui:define name="main">
+
+            <div id="login" style ="width:600px; height:400px; margin-top: 50px; border: 1px solid #000; background-color: #EAEBD8">
+                <div style="width:90px; height:370; margin-top: 60px;margin-left: 150px;padding-left: 25px; float:left">
+                    <h3> </h3>
+                    <h:panelGroup layout="block">
+                        <h:form>
+                            Full Name:<br/><br/>
+                            Username: <br/><br/>
+                            Password: <br/><br/>
+                            Email address: <br/><br/>
+                            Favorite Restaurant: <br/><br/>
+                        </h:form>
+                    </h:panelGroup>
+                </div>
+                <div style="width:320px; height:370; margin-top: 15px;padding-left: 5px; float:left">
+                    <h3>Sign up for Fan Club</h3>
+                    <h:panelGroup layout="block">
+                        <h:form>
+                            <h:inputText id="fullname" value="#{LoginBean.fullName}"/><br /><br/>
+                            <h:inputText id="userID" value="#{LoginBean.username}"/><br /><br/>
+                            <h:inputSecret id="password" value ="#{LoginBean.password}"/><br/><br/>
+                            <h:inputText id="email" value="#{LoginBean.email}"/><br /><br/>
+                            <h:selectOneMenu id ="favorite" value="#{LoginBean.favStore}">
+                                <f:selectItem itemValue="select" itemLabel="Select Store"/>
+                                <f:selectItem itemValue="peoria" itemLabel="Peoria"/>
+                                <f:selectItem itemValue="chicago" itemLabel="Chicago"/>
+                                <f:selectItem itemValue="normal" itemLabel="Bloomington/Normal"/>
+                                <f:selectItem itemValue="champaign" itemLabel="Champaign"/>
+                                <f:selectItem itemValue="stlouis" itemLabel="St. Louis"/>
+
+                            </h:selectOneMenu><br/><br/>
+                            <h:outputText value="#{LoginBean.errorResponse}" style="color:#ff0000"/><br/>
+
+                            <h:commandButton value="Sign up" style="background-color: #DD0000; color: #FFFFFF;" id="loginbutton" action="#{LoginBean.persist()}" />
+                        </h:form>
+                    </h:panelGroup>
+                </div>
+            </div>
+            <script>populatedropdown();</script>
+        </ui:define>
+
+    </ui:composition>
+</body>
+</html>
+

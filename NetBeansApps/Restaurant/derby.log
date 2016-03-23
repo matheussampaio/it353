@@ -1,0 +1,7 @@
+Apache Derby Network Server - 10.4.1.3 - (648739) started and ready to accept connections on port 1527 at 2010-05-07 01:09:50.359 GMT 
+----------------------------------------------------------------
+2010-05-07 01:09:52.578 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.4.1.3 - (648739): instance a816c00e-0128-704f-a78e-000065497d25
+on database directory C:\Documents and Settings\Chris\Desktop\Restaurant\restaurantDB  
+
+Database Class Loader started - derby.database.classpath=''

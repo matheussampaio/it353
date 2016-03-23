@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+    <title>Should Be Ignored</title>
+</head>
+<body>
+
+<ui:composition	template="./WEB-INF/includes/template.xhtml">
+
+        <!-- "htmlHead" part of the template will be replaced by the HTML fragment defined here -->
+	<ui:define name="htmlHead">
+		<meta name="description" content="Our Company Home Page" />
+		<title>Redbird Country - Chicago</title>
+                 <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAA32h4Nj2GPuNG0PXhjTSlERRQN2nji23kgkR2eM-OwDxdR0EGSBSiMzcN35m_e5SQOmwBUvS2jdQqJw"
+                type="text/javascript"></script>
+                <script type="text/javascript">
+                    var baseIcon = new GIcon(G_DEFAULT_ICON);
+                    baseIcon.shadow = "http://www.google.com/mapfiles/shadow50.png";
+                    baseIcon.iconSize = new GSize(20, 34);
+                    baseIcon.shadowSize = new GSize(37, 34);
+                    baseIcon.iconAnchor = new GPoint(9, 34);
+                    baseIcon.infoWindowAnchor = new GPoint(9, 2);
+                    // Creates a marker whose info window displays the letter corresponding
+                    // to the given index.
+                    function createMarker(point, index) {
+                      // Create a lettered icon for this point using our icon class
+                      var letter = String.fromCharCode("A".charCodeAt(0) + index);
+                      var letteredIcon = new GIcon(baseIcon);
+                      letteredIcon.image = "http://www.google.com/mapfiles/marker" + letter + ".png";
+
+                         // Set up our GMarkerOptions object
+                     markerOptions = { icon:letteredIcon };
+                     var marker = new GMarker(point, markerOptions);
+                      return marker;
+                }
+
+                function initialize() {
+                  if (GBrowserIsCompatible()) {
+                    var map = new GMap2(document.getElementById("map_canvas"));
+                    map.setCenter(new GLatLng(41.882124,-87.631205), 13);
+                    map.setUIToDefault();
+
+                     point = new GLatLng(41.882124,-87.631205);
+                     map.addOverlay(createMarker(point, 0));
+
+                  }
+                }
+
+                </script>
+	</ui:define>
+
+
+        <!-- "main" part of the template will be replaced by the HTML fragment defined here -->
+	<ui:define name="main">
+            <div align="left" style="text-align: left;padding-top:5px;width:980px;height:500px;">
+            <div style="width: 200px;height: 700px; float:left; background-color:#EAEBD8; border:1px solid #A8A5B5; margin-right: 0;padding-top: 10px;padding-left: 10px;">
+                <strong>Reviews</strong><hr/>
+                <h:outputText escape="false" value="#{ReviewBean.chicagoReviews}"/>
+            </div>
+            <div style="float:left;padding:0;width:473px;margin-left:10px;">
+                <h:graphicImage width="472" height="350" url="./resources/chicago_restaurant.jpg"></h:graphicImage>
+            </div>
+            <div style="width: 260px; height: 700px; float:right; background-color:#EAEBD8; border:1px solid #A8A5B5; margin-right: 0;padding-top: 10px;padding-left: 10px; ">
+                <div id="map_canvas" style="width: 250px; height: 250px;border:1px solid #000; "></div>
+                <br/><strong>Chicago Store</strong><hr/>
+                <strong>Store Hours:</strong><br/>
+                <ul type="none">
+                    <li><strong>Monday:</strong> 11 a.m - 11 p.m.</li>
+                    <li><strong>Tuesday:</strong> 11 a.m - 11 p.m.</li>
+                    <li><strong>Wednesday:</strong> 11 a.m - 11 p.m.</li>
+                    <li><strong>Thursday:</strong> 11 a.m - 11 p.m.</li>
+                    <li><strong>Friday:</strong> 8 a.m - 1 a.m.</li>
+                    <li><strong>Saturday:</strong> 8 a.m - 1 a.m.</li>
+                    <li><strong>Sunday:</strong> 8 a.m - 11 p.m.</li>
+                </ul>
+            </div>
+            </div>
+	</ui:define>
+
+</ui:composition>
+</body>
+</html>
+

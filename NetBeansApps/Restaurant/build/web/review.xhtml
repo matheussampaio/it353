@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+    <title>Should Be Ignored</title>
+</head>
+<body>
+
+<ui:composition	template="./WEB-INF/includes/template.xhtml">
+
+        <!-- "htmlHead" part of the template will be replaced by the HTML fragment defined here -->
+	<ui:define name="htmlHead">
+		<meta name="description" content="Our Company Home Page" />
+		<title>Redbird Country - Reserve</title>
+	</ui:define>
+
+        <!-- "main" part of the template will be replaced by the HTML fragment defined here -->
+	<ui:define name="main">
+            <div style ="width: 600px; height:100%;border: 1px solid #000; background-color: #EAEBD8; padding-left: 25px;padding-right: 25px; ">
+                <h3>Here's what customers have been saying about us!</h3>
+                <a href="#comment">Leave your own comment!</a>
+                <hr/>
+                <h:outputText escape="false" value="#{ReviewBean.listReviews}"/>
+                <a name="comment"/><p><strong>Leave a comment</strong></p>
+                <h:form>
+                     Name: <h:inputText value="#{ReviewBean.author}" /><br /><br/>
+                     Rating:
+
+                    <h:selectOneMenu value="#{ReviewBean.rating}" >
+                        <f:selectItem itemValue="1" itemLabel="1" />
+                        <f:selectItem itemValue="2" itemLabel="2" />
+                        <f:selectItem itemValue="3" itemLabel="3" />
+                        <f:selectItem itemValue="4" itemLabel="4" />
+                        <f:selectItem itemValue="5" itemLabel="5" />
+
+                    </h:selectOneMenu><br/><br/>
+
+                     Store:
+                     <h:selectOneMenu value="#{ReviewBean.store}" >
+                        <f:selectItem itemValue="all" itemLabel="All Stores" />
+                        <f:selectItem itemValue="chicago" itemLabel="Chicago" />
+                        <f:selectItem itemValue="champaign" itemLabel="Champaign" />
+                        <f:selectItem itemValue="peoria" itemLabel="Peoria" />
+                        <f:selectItem itemValue="normal" itemLabel="Bloomington/Normal" />
+                        <f:selectItem itemValue="stlouis" itemLabel="St. Louis" />
+
+                    </h:selectOneMenu><br/>
+                    <br />
+                    <h:inputTextarea value="#{ReviewBean.text}" rows="10" cols="50" /><br/>
+                    <h:commandButton value="Submit" action="#{ReviewBean.submitReview()}" />
+
+                </h:form>
+
+            </div>
+	</ui:define>
+
+</ui:composition>
+</body>
+</html>
+

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+    <title>Should Be Ignored</title>
+</head>
+<body>
+
+<!-- Note that the "template" attribute of this element indicates that
+     the /WEB-INF/includes/template.xhtml is used as a template -->
+<ui:composition	template="./WEB-INF/includes/template.xhtml">
+
+        <!-- "htmlHead" part of the template will be replaced by the HTML fragment defined here -->
+	<ui:define name="htmlHead">
+		<meta name="description" content="Our Company Home Page" />
+		<title>Redbird Country - Order</title>
+	</ui:define>
+
+        <!-- "main" part of the template will be replaced by the HTML fragment defined here -->
+	<ui:define name="main">
+            what?<br/><br/><br/><br/>what?
+	</ui:define>
+
+</ui:composition>
+</body>
+</html>
+

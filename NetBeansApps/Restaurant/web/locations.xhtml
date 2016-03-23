@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+    <title>Should Be Ignored</title>
+</head>
+<body>
+
+<ui:composition	template="./WEB-INF/includes/template.xhtml">
+
+        <!-- "htmlHead" part of the template will be replaced by the HTML fragment defined here -->
+	<ui:define name="htmlHead">
+		<meta name="description" content="Our Company Home Page" />
+		<title>Redbird Country - Locations</title>
+                <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAA32h4Nj2GPuNG0PXhjTSlERRQN2nji23kgkR2eM-OwDxdR0EGSBSiMzcN35m_e5SQOmwBUvS2jdQqJw"
+                type="text/javascript"></script>
+                <script type="text/javascript">
+                    var baseIcon = new GIcon(G_DEFAULT_ICON);
+                    baseIcon.shadow = "http://www.google.com/mapfiles/shadow50.png";
+                    baseIcon.iconSize = new GSize(20, 34);
+                    baseIcon.shadowSize = new GSize(37, 34);
+                    baseIcon.iconAnchor = new GPoint(9, 34);
+                    baseIcon.infoWindowAnchor = new GPoint(9, 2);
+                    // Creates a marker whose info window displays the letter corresponding
+                    // to the given index.
+                    function createMarker(point, index) {
+                      // Create a lettered icon for this point using our icon class
+                      var letter = String.fromCharCode("A".charCodeAt(0) + index);
+                      var letteredIcon = new GIcon(baseIcon);
+                      letteredIcon.image = "http://www.google.com/mapfiles/marker" + letter + ".png";
+
+                         // Set up our GMarkerOptions object
+                     markerOptions = { icon:letteredIcon };
+                     var marker = new GMarker(point, markerOptions);
+                      return marker;
+                }
+
+                function initialize() {
+                  if (GBrowserIsCompatible()) {
+                    var map = new GMap2(document.getElementById("map_canvas"));
+                    map.setCenter(new GLatLng(40.334, -89.1), 6);
+                    map.setUIToDefault();
+
+                     var point = new GLatLng(41.882124,-87.631205);
+                     map.addOverlay(createMarker(point, 0));
+
+                     point = new GLatLng(40.483471,-89.016148);
+                     map.addOverlay(createMarker(point, 1));
+
+                     point = new GLatLng(40.73961,-89.612846);
+                     map.addOverlay(createMarker(point, 2));
+
+                     point = new GLatLng(40.096103,-88.245478);
+                     map.addOverlay(createMarker(point, 3));
+
+                     point = new GLatLng(38.791528,-90.344571);
+                     map.addOverlay(createMarker(point, 4));
+
+                  }
+                }
+
+                </script>
+	</ui:define>
+
+
+        <!-- "main" part of the template will be replaced by the HTML fragment defined here -->
+	<ui:define name="main">
+            <br/><br/>
+            <h3>Below is a map of our 5 locations spread throughout Illinois</h3>
+            <br/>
+            <center>
+            <div id="map_canvas" style="width: 400px; height: 400px;border:1px solid #000; "></div>
+            </center>
+            <br/><strong><big>Locations</big></strong><hr/>
+                <h:form>
+                <ol type="A">
+                    <li><strong><h:commandLink action ="chicago" value="Chicago Store"/></strong></li>
+                    <li><strong><h:commandLink action ="normal" value="Bloomington/Normal Store"/></strong></li>
+                    <li><strong><h:commandLink action ="peoria" value="Peoria Store"/></strong></li>
+                    <li><strong><h:commandLink action ="champaign" value="Champaign Store"/></strong></li>
+                    <li><strong><h:commandLink action ="stlouis" value="St. Louis Store"/></strong></li>
+                </ol>
+                </h:form>
+	</ui:define>
+
+</ui:composition>
+</body>
+</html>
+

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+<head>
+    <title>Should Be Ignored</title>
+</head>
+<body>
+
+<ui:composition	template="./WEB-INF/includes/template.xhtml">
+
+        <!-- "htmlHead" part of the template will be replaced by the HTML fragment defined here -->
+	<ui:define name="htmlHead">
+		<meta name="description" content="Our Company Home Page" />
+		<title>Redbird Country - Menu</title>
+	</ui:define>
+
+        <!-- "main" part of the template will be replaced by the HTML fragment defined here -->
+        <ui:define name="main" >
+            <h2>Menu</h2>
+            
+            <h:form><h:commandLink value="View Cart" action="cart" /></h:form>
+            <h:form><h:commandLink value="Display All" action="#{MenuBean.filterNone()}" /></h:form>
+            <h:form><h:commandLink value="Show Entrees" action="#{MenuBean.filterEntree()}"></h:commandLink></h:form>
+            <h:form><h:commandLink value="Show Appetizers" action="#{MenuBean.filterAppetizer()}"></h:commandLink></h:form>
+            <h:form><h:commandLink value="Show Salads" action="#{MenuBean.filterSalad()}"></h:commandLink></h:form>
+            
+
+
+            <ui:repeat var="menuitem" value="#{MenuBean.menuListing}">
+                <div style="border: 1px solid black; background-color: #cccccc; width:500px; font-family: helvetica">
+                <strong>
+                    <h:form><h:commandLink action="#{MenuBean.details(menuitem.id)}"><h:graphicImage style="border: none" url="#{menuitem.img_path}" height="100" width="100"></h:graphicImage><br />#{menuitem.name}</h:commandLink></h:form>
+                </strong>
+                
+                <p>
+                    #{menuitem.description}
+                </p>
+                <strong>#{menuitem.priceString}</strong>
+                <!--<h:form id="#{menuitem.id}form">-->
+                <h:form>
+                    <!--Qty: <h:inputText id="quantity" value="#{CartBean.quantity}" />-->
+                    <h:commandButton value="Add to Cart" action="#{CartBean.addNewItem()}" type="submit">
+                        <f:param name="something" value="#{menuitem.id}"></f:param>
+                    </h:commandButton>
+                </h:form>
+                
+                </div>
+              
+            </ui:repeat>
+            
+	</ui:define>
+
+</ui:composition>
+</body>
+</html>
+

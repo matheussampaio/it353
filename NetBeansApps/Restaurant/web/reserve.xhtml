@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+    <title>Should Be Ignored</title>
+</head>
+<body>
+
+<ui:composition	template="./WEB-INF/includes/template.xhtml">
+
+        <!-- "htmlHead" part of the template will be replaced by the HTML fragment defined here -->
+	<ui:define name="htmlHead">
+		<meta name="description" content="Our Company Home Page" />
+		<title>Redbird Country - Reserve</title>
+	</ui:define>
+
+        <!-- "main" part of the template will be replaced by the HTML fragment defined here -->
+	<ui:define name="main">
+            <div style="width:600px; height:500px;">
+            <h3>Make a reservation</h3>
+            Use the form below to create a reservation at one of our stores. <br/>
+            <div style ="width: 600px; height:100%;border: 1px solid #000; background-color: #EAEBD8; padding-left: 25px;padding-right: 25px; ">
+                <h:form>
+                    Name: <h:inputText value="#{ReservationBean.name}" /><br /><br/>
+                     Store:
+                     <h:selectOneMenu value="#{ReservationBean.store}" >
+                        <f:selectItem itemValue="all" itemLabel="All Stores" />
+                        <f:selectItem itemValue="chicago" itemLabel="Chicago" />
+                        <f:selectItem itemValue="champaign" itemLabel="Champaign" />
+                        <f:selectItem itemValue="peoria" itemLabel="Peoria" />
+                        <f:selectItem itemValue="normal" itemLabel="Bloomington/Normal" />
+                        <f:selectItem itemValue="stlouis" itemLabel="St. Louis" />
+
+                    </h:selectOneMenu><br/>
+                    <br />
+                    Date: <h:inputTextarea value="#{ReservationBean.date}" rows="10" cols="50" /><br/>
+                    Time: <h:inputTextarea value="#{ReservationBean.time}" rows="10" cols="50" /><br/>
+                    Size of party:
+                        
+                    <h:commandButton value="Submit" action="#{ReviewBean.submitReview()}" />
+
+                </h:form>
+
+            </div>
+            </div>
+	</ui:define>
+
+</ui:composition>
+</body>
+</html>
+

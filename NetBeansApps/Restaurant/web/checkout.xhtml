@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+<head>
+    <title>Should Be Ignored</title>
+</head>
+<body>
+
+<ui:composition	template="./WEB-INF/includes/template.xhtml">
+
+        <!-- "htmlHead" part of the template will be replaced by the HTML fragment defined here -->
+	<ui:define name="htmlHead">
+		<meta name="description" content="Our Company Home Page" />
+		<title>Redbird Country - Checkout</title>
+	</ui:define>
+
+        <!-- "navigation" part of the template will be replaced by the HTML fragment defined here -->
+	<ui:define name="navigation">
+		<h:outputText styleClass="selected" value="Home" />
+		<h:commandLink action="locations" value="Locations" />
+		<h:commandLink action="menu" value="Menu" />
+                <h:commandLink action="order" value="Online Ordering" />
+                <h:commandLink action="shop" value="Shop" />
+	</ui:define>
+
+        <!-- "main" part of the template will be replaced by the HTML fragment defined here -->
+	<ui:define name="main">
+            <h3>Checkout</h3>
+            <h3>Thank you, your order has been processed!</h3>
+	</ui:define>
+
+</ui:composition>
+</body>
+</html>
+
