@@ -188,6 +188,10 @@ public class UserBean {
         }
     }
     
+    public boolean userNameIsUnique() {
+        return this.userNameIsUnique(this.username);
+    }
+    
     private boolean userNameIsUnique(String userName) {
         UserDAO userDAO = new UserDAO();
         
@@ -287,6 +291,12 @@ public class UserBean {
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }
+    }
+    
+    public void loadUserData(String username) {
+        UserDAO userDAO = new UserDAO();
+        
+        userDAO.setModelData(this);
     }
 
     /**
