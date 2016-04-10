@@ -19,9 +19,10 @@ public class StockWS {
     
     /**
      * This is a sample web service operation
+     * @return price
      */
     @WebMethod(operationName = "price")
-    public String price(@WebParam(name = "symbol") String symbol) {
-        return String.valueOf(StockPrices.getInstance().getPrice(symbol));
+    public Double price(@WebParam(name = "symbol") String symbol) {
+        return StockPrices.getInstance().getPrice(symbol);
     }
 }

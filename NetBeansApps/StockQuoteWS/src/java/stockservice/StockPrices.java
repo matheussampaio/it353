@@ -65,6 +65,8 @@ public class StockPrices {
     }
     
     public double getPrice(String symbol) {
-        return stockPrices.get(symbol);
+        Double price = stockPrices.get(symbol);
+        
+        return price != null ? price : -1;
     }
 }

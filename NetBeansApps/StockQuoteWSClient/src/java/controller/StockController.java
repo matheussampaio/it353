@@ -37,11 +37,15 @@ public class StockController {
         
         if (symbol.length() > 0) {
             stockservice.StockWS port = service.getStockWSPort();
+            
+            Double price = port.price(symbol);
 
-            Double price = Double.parseDouble(port.price(symbol));
-
-            getPriceModel().setDatetime(Date.from(Instant.now()));
-            getPriceModel().setPrice(price);
+            if (price != -1) {
+                
+                getPriceModel().setDatetime(Date.from(Instant.now()));
+                getPriceModel().setPrice(price);
+            
+            }
         }
     }
 
