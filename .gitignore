@@ -5,3 +5,7 @@ node_modules/
 /NetBeansApps/ProfileMatchAppJSF2.x/build/
 
 *.class
+/NetBeansApps/StockQuoteWS/nbproject/private/
+/NetBeansApps/StockQuoteWS/build/
+/NetBeansApps/StockQuoteWSClient/nbproject/private/
+/NetBeansApps/StockQuoteWSClient/build/
